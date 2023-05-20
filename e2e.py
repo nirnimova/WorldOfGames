@@ -4,7 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 # 1
-chrome_driver = webdriver.Chrome(executable_path='/usr/local/bin/chromedriver.exe')
+chrome_driver = webdriver.Chrome(executable_path='/usr/local/kaka/moshe.exe')
 
 
 def main_function():
