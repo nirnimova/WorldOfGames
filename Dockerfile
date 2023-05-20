@@ -9,7 +9,7 @@ RUN pip install -r /app/requirements.txt
 RUN apt-get update && apt-get install -y \
     curl \
     unzip \
-    wget \
+    wget
 #     libgconf-2-4 \
 #     libncurses5 \
 #     libpq-dev \
