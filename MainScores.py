@@ -1,4 +1,3 @@
-import os
 from flask import Flask
 from flask import render_template
 
@@ -9,7 +8,7 @@ app = Flask(__name__)
 @app.route("/score_server")
 def score_server():
     try:
-        document_path = os.getcwd() + 'Scores.txt'
+        document_path = 'Scores.txt'
         scores_file = open(document_path, mode='r', encoding='utf-8')
 
         return render_template('ScoresGame.html', SCORE=scores_file.readline())
