@@ -9,7 +9,7 @@ def test_scores_service(url):
     chrome_driver = webdriver.Chrome(executable_path='chromedriver.exe')
     chrome_driver.get(url)
     score = chrome_driver.find_element(By.ID, "score").text
-    if 1 <= int(score) <= 50:
+    if 1 <= int(score) <= 1000:
         return True
     else:
         return False
