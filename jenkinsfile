@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                bat 'python -c "from e2e import main_function; main_function()"'
+                bat 'python -c "from /app/tests/e2e import main_function; main_function()"'
             }
         }
         stage('Finalize') {
