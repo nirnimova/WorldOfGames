@@ -1,6 +1,7 @@
 FROM python:3.11.3-slim
 COPY *.py /app/
 COPY Scores.txt /app/
+COPY requirements.txt /app/
 COPY templates/* /app/templates/
 RUN pip install -r /app/requirements.txt
 
