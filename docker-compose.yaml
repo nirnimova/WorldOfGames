@@ -3,8 +3,8 @@ version: '3'
 services:
   app:
     build: .
-    image: "nnimova/world-of-games"
+    image: "nnimova/world-of-games:latest"
     ports:
-      - "5002:5000"
+      - "8777:5000"
     volumes:
-      - ./Scores.txt:/app/scores/Scores.txt
+      - ./Scores.txt:/app/Scores.txt

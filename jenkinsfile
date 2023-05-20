@@ -1,0 +1,33 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/nirnimova/WorldOfGames.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                bat 'docker-compose build'
+            }
+        }
+        stage('Run') {
+            steps {
+                bat 'docker-compose up -d'
+            }
+        }
+        stage('Test') {
+            steps {
+                bat 'python -c "from e2e import main_function; main_function()"'
+            }
+        }
+        stage('Finalize') {
+            steps {
+                sleep 60
+                bat 'docker-compose push'
+                bat 'docker-compose down'
+            }
+        }
+    }
+}

@@ -1,3 +1,4 @@
+import os
 from flask import Flask
 from flask import render_template
 
@@ -8,13 +9,12 @@ app = Flask(__name__)
 @app.route("/score_server")
 def score_server():
     try:
-        document_path = 'Scores.txt'
-        scores_file = open(document_path, mode='r', encoding='utf-8')
-
-        return render_template('ScoresGame.html', SCORE=scores_file.readline())
+        document_path = os.getcwd() + '/app/Scores.txt'
+        with open(document_path, mode='r', encoding='utf-8') as scores_file:
+            score = scores_file.readline()
+            return render_template('ScoresGame.html', SCORE=score)
     except BaseException as e:
         return render_template('ScoresGame.html', ERROR=e)
-
 
 #
 # @app.route("/register")
