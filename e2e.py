@@ -16,7 +16,7 @@ def test_scores_service(url):
 
 
 def main_function():
-    if test_scores_service('http://localhost:8777/'):
+    if test_scores_service('http://localhost:8777/score_server'):
         sys.exit(0)
     else:
         sys.exit(1)
